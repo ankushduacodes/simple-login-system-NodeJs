@@ -1,0 +1,27 @@
+{
+  "name": "simple-login-system-nodejs",
+  "version": "1.0.0",
+  "description": "making a simple login system with nodejs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ankushduacodes/simple-login-system-NodeJs.git"
+  },
+  "author": "Ankush Dua",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/ankushduacodes/simple-login-system-NodeJs/issues"
+  },
+  "homepage": "https://github.com/ankushduacodes/simple-login-system-NodeJs#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.2.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.3"
+  }
+}
