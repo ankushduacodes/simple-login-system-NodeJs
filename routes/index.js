@@ -18,4 +18,16 @@ router.get('/register', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/register.html'));
 });
 
+router.post('/register', (req, res) => {
+  res.redirect('/login');
+});
+
+router.post('/login', (req, res) => {
+
+});
+
+router.get('/logout', (req, res) => {
+
+});
+
 export default router;
