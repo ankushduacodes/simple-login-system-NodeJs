@@ -21,7 +21,7 @@ mongoose.connect(
 
 const app = express();
 
-const port = 8080;
+const port = 8080 || process.env.PORT;
 
 authenticate(passport);
 
