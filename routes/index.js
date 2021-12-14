@@ -4,6 +4,8 @@ import { fileURLToPath } from 'url';
 import passport from 'passport';
 
 // eslint-disable-next-line import/extensions
+import * as fs from 'fs';
+// eslint-disable-next-line import/extensions
 import User from '../schema/index.js';
 // eslint-disable-next-line import/extensions
 import { checkIfAuthenticated, checkIfNotAuthenticated, generateHash } from '../helper.js';
@@ -48,7 +50,7 @@ router.post('/register', async (req, res) => {
     console.log(err);
     return res.redirect('/register');
   }
-  res.redirect('/login');
+  return res.redirect('/login');
 });
 
 router.post('/login', passport.authenticate('local', {
@@ -62,7 +64,9 @@ router.get('/logout', (req, res) => {
 });
 
 router.get('/dashboard', checkIfAuthenticated, (req, res) => {
-  res.sendFile(path.join(__dirname, '../public/dashboard.html'));
+  let file = fs.readFileSync(path.join(__dirname, '../public/dashboard.html'), 'utf8');
+  file = file.replace(/{{name}}/, req.user.name);
+  return res.send(file);
 });
 
 export default router;
