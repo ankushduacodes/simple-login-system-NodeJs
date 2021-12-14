@@ -14,7 +14,7 @@ import config from './config/config.js';
 import authenticate from './config/passport.js';
 
 mongoose.connect(
-  `mongodb+srv://${config.USERNAME || process.env.USERNAME}:${config.PASSWORD || process.env.PASSWORD}@cluster0.rd7qo.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`,
+  `mongodb+srv://${process.env.USERNAME || config.USERNAME}:${process.env.PASSWORD || config.PASSWORD}@cluster0.rd7qo.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`,
   { useNewUrlParser: true, useUnifiedTopology: true },
 // eslint-disable-next-line no-console
 ).then(() => console.log('connected')).catch((e) => console.log('connection failure\n', e));
@@ -31,7 +31,7 @@ app.use(express.json());
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 app.use(passport.initialize());
 app.use(session({
-  secret: process.env.SECRET,
+  secret: process.env.SECRET || config.SECRET,
   resave: false,
   saveUninitialized: false,
   store: session.sessionStore,
