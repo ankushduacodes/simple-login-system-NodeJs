@@ -37,7 +37,7 @@ app.use(session({
   store: session.sessionStore,
   // TODO: for production set secure to true
   cookie: {
-    secure: true,
+    secure: false,
   },
 }));
 app.use(passport.session());
