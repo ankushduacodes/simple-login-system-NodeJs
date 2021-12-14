@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Login</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="css/main.css" rel="stylesheet">
-    </head>
-    <body>
-        <div>
-            <form action="/login" method="post">
-                <label for="uEmail">Email: </label>
-                <input type="email" id="uEmail">
-                <br>
-                <label for="uPass">Password: </label>
-                <input type="password", id="uPass">
-                <br>
-                <button type="submit">Login</button>
-            </form>
-        </div>
-    </body>
+<head>
+  <title>Login</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/main.css" rel="stylesheet">
+</head>
+<body>
+<div>
+  <form action="/login" method="post" enctype="application/json">
+    <label for="uEmail">Email: </label>
+    <input type="email" id="uEmail" name="email">
+    <br>
+    <label for="uPass">Password: </label>
+    <input type="password" id="uPass" name="password">
+    <br>
+    <input type="submit" value="Login">
+  </form>
+</div>
+</body>
 </html>
