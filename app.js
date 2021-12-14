@@ -9,19 +9,19 @@ import methodOverride from 'method-override';
 // eslint-disable-next-line import/extensions
 import defRouter from './routes/index.js';
 // eslint-disable-next-line import/extensions
-// import config from './config/config.js';
+import config from './config/config.js';
 // eslint-disable-next-line import/extensions
 import authenticate from './config/passport.js';
 
 mongoose.connect(
-  `mongodb+srv://${process.env.USERNAME}:${process.env.PASSWORD}@cluster0.rd7qo.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`,
+  `mongodb+srv://${config.USERNAME || process.env.USERNAME}:${config.PASSWORD || process.env.PASSWORD}@cluster0.rd7qo.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`,
   { useNewUrlParser: true, useUnifiedTopology: true },
 // eslint-disable-next-line no-console
 ).then(() => console.log('connected')).catch((e) => console.log('connection failure\n', e));
 
 const app = express();
 
-const port = 8080 || process.env.PORT;
+const port = process.env.PORT || 8080;
 
 authenticate(passport);
 
