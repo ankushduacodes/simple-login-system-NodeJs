@@ -9,7 +9,7 @@ import methodOverride from 'method-override';
 // eslint-disable-next-line import/extensions
 import defRouter from './routes/index.js';
 // eslint-disable-next-line import/extensions
-import config from './config/config.js';
+// import config from './config/config.js';
 // eslint-disable-next-line import/extensions
 import authenticate from './config/passport.js';
 
